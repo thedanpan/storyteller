@@ -45,3 +45,16 @@ for i in users
       )
   end
 end
+
+stories = Story.all
+
+# create some comments
+sample_stories = stories.sample(5)
+for i in sample_stories
+  3.times do
+    i.comments.create(
+      content: Faker::Lorem.sentence,
+      story_id: sample_stories.sample
+      )
+  end
+end
