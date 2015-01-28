@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div id="main">
+    <header>
+      <a href="/"><img src="/img/isosi.png" class="logo"></a>
+
+      <div id="login_bar">
+        <% if current_user %>
+          Welcome, <%= current_user.name %> | <a href="/logout">Logout</a>
+
+        <% else %>
+          <a href="/login">Login</a> | <a href="/signup">Signup</a>
+        <% end %>
+      </div>
+    </header>
+
+    <div id="error_bar">
+      <%= display_error! %>
+    </div>
+
+    <div id="container">
+      <%= yield %>
+    </div>
+
+    <footer>Brought to you by <a href="http://github.com/thedanpan" target="_blank">+dandans</a></footer>
+
+  </div>
+</body>
+</html>
