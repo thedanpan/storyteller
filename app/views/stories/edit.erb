@@ -1,0 +1,24 @@
+<div class="edit_story_form">
+  <form action="/story/<%= story.id %>/edit" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <h4>Title:</h4>
+    <input type="text" name="story[title]" value="<%= story.title %>" class="edit_short">
+
+    <h4>Genre:</h4>
+    <select name="story[genre_name]">
+      <% genres.each do |genre| %>
+      <option value="<%= genre.name %>"><%= genre.name %></option>
+      <% end %>
+    </select></br></br></br>
+
+    <input type="radio" name="story[fiction]" value="true">Fiction</br>
+    <input type="radio" name="story[fiction]" value="false">Non-Fiction</br></br></br>
+
+    <h4>Tell your story:</h4>
+    <textarea name="story[content]" class="edit_long"><%= story.content %></textarea>
+
+    <div class="button_center">
+      <input type="submit" value="Update Story" class="button_style">
+    </div>
+  </form>
+</div>
