@@ -1,0 +1,1 @@
+<a href="/story/<%= story.id %>"><%= story.title.capitalize %></a>  |  <%= story.genre.name %>  |  <% if story.fiction == true %><%= 'Fiction' %><% else %><%= 'Non-Fiction' %><% end %>  |  Author: <%= story.author.name %>  |  Published on: <%= story.date_published %>
