@@ -1,3 +1,3 @@
-get '/home' do
-  erb :'auth/home'
+get '/home', auth: :user do
+    erb :'auth/home'
 end
