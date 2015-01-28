@@ -3,7 +3,7 @@
   <ul>
     <% stories.each do |story| %>
     <li>
-      <a href="/story/<%= story.id %>"><%= story.title.capitalize %></a>  |  <% if story.fiction == true %><%= 'Fiction' %><% else %><%= 'Non-Fiction' %><% end %>  |  Author: <%= story.author.name %>  |  Published on: <%= story.date_published %>
+      <%= erb :'stories/_description', locals: {story: story} %>
     </li>
     <% end %>
   </ul>
