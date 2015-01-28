@@ -1,0 +1,18 @@
+<h4>My Stories:</h4>
+<div class="user_stories_list">
+  <ul>
+    <% stories.each do |story| %>
+      <% if author?(story) %>
+        <li>
+          <%= erb :'stories/_description', locals: {story: story} %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <% if Story.find_by(author_id: current_user.id) == nil %>
+    <p>Hm, looks like you don't have any stories yet.</p>
+    <div class="button_center">
+      <input type="button" value="Write a New Story" onclick="location.href='/story/new'" class="button_style">
+    </div>
+  <% end %>
+</div>

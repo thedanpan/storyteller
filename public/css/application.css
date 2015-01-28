@@ -25,11 +25,12 @@ header h1 a:link, header h1 a:visited {
   color: #ffffff;
 }
 
-header h2 {
-  font-size: 1em;
-  font-style: italic;
-  color: #999999;
-  padding: 3%;
+h2 {
+  border-bottom: 1px solid #fff;
+  width: 100px;
+  font-weight: normal;
+  font-size: 1.5em;
+  margin: 2% auto;
 }
 
 h3 {
@@ -54,6 +55,10 @@ p {
 
 a {
   color: #ffffff;
+}
+
+em {
+  font-size: 0.9em;
 }
 
 ul {

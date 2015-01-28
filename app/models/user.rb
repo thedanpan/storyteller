@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
   validates :email, :presence => {:message => "Must provide an email"}
   validates :email, :uniqueness => {:message => "Sorry, that email is already taken"}
+
+  def genres_written
+    genres = stories.map { |story| story.genre }.uniq
+  end
 end

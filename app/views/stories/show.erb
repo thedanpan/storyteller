@@ -1,0 +1,17 @@
+<div class="story">
+  <h6><%= story.title.capitalize %></h6>
+  <%= story.content %> </br></br></br>
+  By: <%= story.author.name %> </br></br>
+  Published on: <%= story.date_published %> </br>
+  <% if author?(story) %>
+    <a href="/story/<%= story.id %>/edit" class="edit_button">Edit</a>
+    <div class="delete_button">
+      <form action="/story/<%= story.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <!-- check if this is needed -->
+        <input type="hidden" name="story_id" value="<%= story.id %>">
+        <button type="submit" class="button_style">Delete</button>
+      </form>
+    </div>
+  <% end %>
+</div>
