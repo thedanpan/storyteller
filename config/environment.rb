@@ -46,8 +46,8 @@ configure do
     def auth(type)
       condition do
         unless send("current_#{type}")
-          redirect '/login'
-          add_error!("Not authorized, please login.")
+          set_error!("NOT AUTHORIZED")
+          redirect '/'
         end
       end
     end
