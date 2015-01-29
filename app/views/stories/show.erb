@@ -15,4 +15,16 @@
       </form>
     </div>
   <% end %>
+
+  <hr>
+
+  <div class="new_comment_box">
+    <%= erb :'comments/new', locals: {story: story} %>
+  </div>
+
+  <ul class="comment_list">
+    <% story.comments.each do |comment| %>
+      <li><%= erb :'comments/show', locals: {story: story, comment: comment} %></li>
+    <% end %>
+  </ul>
 </div>
