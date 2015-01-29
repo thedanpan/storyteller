@@ -42,7 +42,7 @@ put '/story/:id/edit' do |id|
     content: params[:story][:content],
     fiction: params[:story][:fiction],
     genre: Genre.find_by(name: params[:story][:genre_name]) )
-  redirect '/story/all'
+  redirect "/story/#{story.id}"
 end
 
 get '/story/all/user' do

@@ -3,6 +3,7 @@
   <%= story.content %> </br></br></br>
   By: <%= story.author.name %> </br></br>
   Published on: <%= story.date_published %> </br>
+
   <% if author?(story) %>
     <a href="/story/<%= story.id %>/edit" class="edit_button">Edit</a>
     <div class="delete_button">
@@ -14,4 +15,18 @@
       </form>
     </div>
   <% end %>
+
+  <hr>
+
+  <div class="comments">
+    <div class="new_comment_box">
+      <%= erb :'comments/new', locals: {story_id: story.id} %>
+    </div>
+
+    <ul class="comment_list">
+      <% story.comments.each do |comment| %>
+        <li><%= erb :'comments/show', locals: {story: story, comment: comment}, layout: false %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

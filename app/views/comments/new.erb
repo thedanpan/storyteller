@@ -1,0 +1,14 @@
+<% if current_user %>
+  <div class="new_comment_form">
+    <form action="/comment/new" method="POST" class="new_comment">
+      <input type="hidden" name="comment[story_id]" value="<%= story_id %>">
+      <input type="hidden" name="comment[commentor_id]" value="<%= current_user.id %>">
+
+      <textarea name="comment[content]" class="edit_medium"></textarea>
+
+      <div class="button_center">
+        <input type="submit" value="Comment" class="button_style">
+      </div>
+    </form>
+  </div>
+<% end %>

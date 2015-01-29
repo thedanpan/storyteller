@@ -2,9 +2,7 @@
 <div class="stories_list">
   <ul>
     <% stories.each do |story| %>
-    <li>
-      <%= erb :'stories/_description', locals: {story: story} %>
-    </li>
+    <li><%= erb :'stories/_description', locals: {story: story} %></li>
     <% end %>
   </ul>
 </div>
