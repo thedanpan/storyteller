@@ -1,6 +1,3 @@
-get '/comment/new' do
-  erb :'/comments/new'
-end
 
 post '/comment/new' do
   comment = Comment.create(
