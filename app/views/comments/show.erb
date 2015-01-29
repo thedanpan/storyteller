@@ -1,0 +1,16 @@
+<div class="comment">
+  + <%= comment.get_name(comment.commentor_id) %> at <%= comment.date_posted %><br><br>
+  "<%= comment.content %>"<br><br>
+
+  <% if commentor?(comment) %>
+    <a href="/comment/<%= comment.id %>/edit">Edit</a>
+    <div class="delete_button">
+      <form action="/comment/<%= comment.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <!-- check if this is needed -->
+        <input type="hidden" name="comment_id" value="<%= comment.id %>">
+        <button type="submit" class="button_style">Delete</button>
+      </form>
+    </div>
+  <% end %>
+</div>
