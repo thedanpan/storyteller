@@ -18,13 +18,15 @@
 
   <hr>
 
-  <div class="new_comment_box">
-    <%= erb :'comments/new', locals: {story: story} %>
-  </div>
+  <div class="comments">
+    <div class="new_comment_box">
+      <%= erb :'comments/new', locals: {story_id: story.id} %>
+    </div>
 
-  <ul class="comment_list">
-    <% story.comments.each do |comment| %>
-      <li><%= erb :'comments/show', locals: {story: story, comment: comment} %></li>
-    <% end %>
-  </ul>
+    <ul class="comment_list">
+      <% story.comments.each do |comment| %>
+        <li><%= erb :'comments/show', locals: {story: story, comment: comment}, layout: false %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
