@@ -3,6 +3,7 @@
   <%= story.content %> </br></br></br>
   By: <%= story.author.name %> </br></br>
   Published on: <%= story.date_published %> </br>
+
   <% if author?(story) %>
     <a href="/story/<%= story.id %>/edit" class="edit_button">Edit</a>
     <div class="delete_button">
