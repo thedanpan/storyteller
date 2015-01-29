@@ -75,6 +75,11 @@ li {
   font-size: 1.25em;
 }
 
+hr {
+  width: 60%;
+  margin: 0 auto 10% auto;
+}
+
 a:hover {
   cursor: crosshair;
 }

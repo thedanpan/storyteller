@@ -3,9 +3,7 @@
   <ul>
     <% stories.each do |story| %>
       <% if author?(story) %>
-        <li>
-          <%= erb :'stories/_description', locals: {story: story} %>
-        </li>
+        <li><%= erb :'stories/_description', locals: {story: story} %></li>
       <% end %>
     <% end %>
   </ul>
