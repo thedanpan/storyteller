@@ -129,9 +129,25 @@ a:visited {
   margin-top: 10%;
 }
 
+.comment_list {
+  width: 60%;
+  margin: 10% auto;
+}
+
+.comment {
+  font-size: 0.8em;
+}
+
 .edit_short {
   width: 60%;
   margin-bottom: 5%;
+  padding: 1% 3%;
+}
+
+.edit_medium {
+  width: 55%;
+  height: 100px;
+  margin-bottom: 3%;
   padding: 1% 3%;
 }
 
