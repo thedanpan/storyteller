@@ -5,10 +5,15 @@ post '/comment/new' do
     story_id: params[:comment][:story_id],
     commentor_id: params[:comment][:commentor_id]
     )
-  unless comment.save
-    set_error!("Something went wrong while saving your comment. Please try again.")
+  # unless comment.save
+  #   set_error!("Something went wrong while saving your comment. Please try again.")
+  # end
+
+  if request.xhr?
+    erb :'comments/show', locals: {comment: comment}, layout: false
+  else
+    redirect "/story/#{comment.story_id}"
   end
-  redirect "/story/#{comment.story_id}"
 end
 
 get '/comment/:id' do
