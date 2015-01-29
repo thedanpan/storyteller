@@ -1,0 +1,11 @@
+<div class="edit_comment_form">
+  <form action="/comment/<%=comment.id%>/edit" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+
+    <textarea name="comment[content]" class="edit_medium"><%= comment.content %></textarea>
+
+    <div class="button_center">
+      <input type="submit" value="Update Comment" class="button_style">
+    </div>
+  </form>
+</div>
