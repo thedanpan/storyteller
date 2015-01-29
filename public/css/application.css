@@ -129,6 +129,10 @@ a:visited {
   margin-top: 10%;
 }
 
+#spinner {
+  display: none;
+}
+
 .comment_list {
   width: 60%;
   margin: 10% auto;
